@@ -1,0 +1,10 @@
+service nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service.sec
+    class hal
+    user nfc
+    group nfc
+    oneshot
+   disabled
+
+on boot
+    start nfc_hal_service	
+
