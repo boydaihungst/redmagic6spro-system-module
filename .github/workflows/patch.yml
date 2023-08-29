@@ -1,0 +1,30 @@
+# patch workflow for Magisk Module Git v1.0.0 by Ali BEYAZ
+
+name: patch 
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: symbuzzer/fork-checkout-repo@main
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Copying files to necessary dirs
+        run:  |
+          sudo mv -f changelog.md ./CHANGELOG_TEMPLATE.md
+          sudo cp .github/patch/module.prop ./
+          sudo cp .github/patch/update.json ./
+          sudo cp .github/patch/CHANGELOG.md ./
+          sudo cp .github/patch/CHANGELOG_TEMPLATE_MOD.md ./
+          sudo cp .github/patch/LICENSE ./
+          sudo cp .github/patch/LICENSE_TEMPLATE ./
+          sudo cp .github/patch/README.md ./
+          sed -i 's/*   MMT Extended by Zackptg5 @ XDA   */*  MMT Extended Next by Ali BEYAZ  */g' common/functions.sh
+
+      - name: Commit and push changes
+        uses: symbuzzer/fork-push-changes@master
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
