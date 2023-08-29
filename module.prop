@@ -1,9 +1,9 @@
-id={module_name}
-name={module_name}
+id=redmagic6spro-system-module
+name=redmagic6spro-system-module
 version=v1.0.0
-versionCode=100
-author={user_name}
-description={description}
-updateJson=https://raw.githubusercontent.com/{user_name}/{module_name}/{branch}/update.json
-support=https://github.com/{user_name}/{module_name}/issues
-donate={donate_url}
+versionCode=1
+author=boydaihungst
+description=Change system without RW  
+updateJson=https://raw.githubusercontent.com/boydaihungst/redmagic6spro-system-module/main/update.json
+support=https://github.com/boydaihungst/redmagic6spro-system-module/issues
+donate=
